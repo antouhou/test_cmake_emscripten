@@ -1,7 +1,6 @@
 //
 // Created by anton on 07.02.19.
 //
-
 #include <vector>
 #include "stdint.h"
 

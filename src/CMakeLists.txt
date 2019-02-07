@@ -6,8 +6,5 @@ source_group("SrcHeaders" FILES ${HEADERS})
 
 set(C_LIB ${CMAKE_BINARY_DIR}/testlib.a)
 
+# Compiling the lib for using with other cpp projects
 add_library(testlib ${CMAKE_CURRENT_SOURCE_DIR}/testclass.cpp)
-
-add_library(testlib_tmp ${HEADERS}
-        ${CMAKE_CURRENT_SOURCE_DIR}/testclass.cpp
-        )
