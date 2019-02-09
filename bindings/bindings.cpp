@@ -4,14 +4,19 @@
 
 #include "emscripten/bind.h"
 #include "../src/testclass.h"
+#include "testclasswrapper.cpp"
 
+#include <iostream>
+
+using namespace std;
 using namespace emscripten;
+using namespace testlib;
+using namespace js_bindings;
 
-namespace testlib {
+namespace js_bindings {
     EMSCRIPTEN_BINDINGS(libtest) {
-            class_<TestClass>("TestClass")
-                    .constructor()
-                    .function("serialize", &TestClass::Serialize)
-                    .class_function("fromBytes", &TestClass::FromBytes, allow_raw_pointers());
+            class_<TestClassWrapper>("TestClass")
+                    .class_function("fromBytes", &TestClassWrapper::FromBytes)
+                    .function("serialize", &TestClassWrapper::Serialize);
     };
 }
