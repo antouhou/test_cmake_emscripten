@@ -3,7 +3,6 @@
 //
 
 #include "emscripten/bind.h"
-#include "../src/testclass.h"
 #include "testclasswrapper.cpp"
 
 #include <iostream>

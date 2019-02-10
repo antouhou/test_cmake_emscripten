@@ -6,6 +6,7 @@
 #define TEST_EMSCRIPTEN_PROJECT_TESTCLASSWRAPPER_H
 
 #include "../src/testclass.h"
+#include "emscripten/val.h"
 #include <string>
 #include <vector>
 #include "stdint.h"
@@ -17,7 +18,7 @@ namespace js_bindings {
         public:
             static TestClassWrapper FromBytes(const std::string bytes);
 
-            std::string Serialize();
+            emscripten::val Serialize();
             TestClassWrapper(TestClass& t);
         private:
             TestClass& wrapped;
