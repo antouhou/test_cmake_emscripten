@@ -16,12 +16,13 @@ using namespace testlib;
 namespace js_bindings {
     class TestClassWrapper {
         public:
-            static TestClassWrapper FromBytes(const std::string bytes);
+            static TestClassWrapper FromBytes(emscripten::val uint8Array);
 
+            // This method returns a memory view to the js
             emscripten::val Serialize();
             TestClassWrapper(TestClass& t);
         private:
-            TestClass& wrapped;
+            TestClass wrapped;
     };
 }
 
